@@ -1,0 +1,42 @@
+  
+<div id="content">
+  <div>
+    <header><h2>Вопросы</h2></header>
+    <div id="questionBlock">
+      <div id="blockQuestionOne">
+        <ul>
+          <li><a (click)="changeQuestion(1)" class="progressBar font-size">Вопрос 1</a></li>
+          <li><a (click)="changeQuestion(2)" class="progressBar font-size">Вопрос 2</a></li>
+          <li><a (click)="changeQuestion(3)" class="progressBar font-size">Вопрос 3</a></li>
+        </ul>
+        <div id="visualBlock" [ngSwitch]="question">
+          <app-img-block *ngSwitchCase="1"></app-img-block>
+          <app-imgs-block *ngSwitchCase="2"></app-imgs-block>
+          <app-video-block *ngSwitchCase="3"></app-video-block>
+        </div>        
+      </div> 
+      <div id="blockQuestionTwo">
+        <div id="progress" >
+          <div class="progressQuestion correctAnswer"> </div>
+          <div class="progressQuestion incorrectAnswer"> </div>
+          <div class="progressQuestion" > </div>
+        </div>
+        <div>
+          <h3>{{answer}}</h3>
+          <p>Посмотрите на картинку и выбирите правильный ответ:</p>
+          <div  [ngSwitch]="question">
+             <app-question1  *ngSwitchCase="1"></app-question1>
+             <app-question2  *ngSwitchCase="2"></app-question2>
+             <app-question3  *ngSwitchCase="3"></app-question3>
+          </div>
+          <h4>Ответ: </h4>
+        </div>
+        <div id="button">
+          <button id="submit" (input)="onSubmit()">Отправить</button>
+          <button id="next" (click)="nextQuestion()" *ngIf="question!=3">Следующий вопрос</button>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div> 
+<router-outlet></router-outlet>

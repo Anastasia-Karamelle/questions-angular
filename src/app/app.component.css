@@ -1,0 +1,121 @@
+html. body{ 
+	height: 100%;
+	margin: 0; 
+	padding: 0;
+}
+.border{
+	border:1px solid black;   
+}
+header{
+	background-color: #82c8f0;
+	height: 80px;
+}
+header h2{
+	text-align: center;
+}
+
+#content{
+	display: grid;
+	height: 100vh;
+} 
+#questionBlock{ 
+	display: grid;
+	grid-template-columns: 5fr 5fr; 
+	grid-template-areas: 
+	"blockOne blockTwo"; 
+}
+#blockQuestionOne{
+	grid-area: blockOne;
+}
+#blockQuestionOne ul li{
+	border-bottom: 1px solid #686a6c;
+}
+#blockQuestionTwo{
+	grid-area: blockTwo;
+}
+#progress{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	text-align: center;
+	
+}
+.progressQuestion{
+	height: 20px;
+	border-left:1px solid #686a6c;
+}
+.progressQuestion, ul li{ 
+	background-color: #939191;
+	text-align: center; 
+} 
+.font-size{
+	color:white; 
+}
+.correctAnswer{ 
+	background-color: #00e600;
+}
+.incorrectAnswer{ 
+	background-color: #ff003a;
+}
+#button{  
+	display: grid;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	list-style-type: none; 
+} 
+ul li a{
+	text-decoration: none;
+	color: white;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+ul li a:hover{
+	color: #07d4ff; 
+}
+#submit, #next{
+	background-color: #3690c4;
+	border:none;
+	padding: 10px; 
+}
+#submit{
+	border-bottom: 1px solid black;
+}
+#submit:hover, #next:hover{
+	cursor:pointer;
+	background-color:#0070b0;
+}
+@media screen and (max-width: 700px) {
+	#button{ 
+		margin-top: 10vh; 
+	}
+	label{
+		font-size: 1em;
+	}
+	h2, h3, a{
+		font-size: 1.5em;
+	}
+	h4{
+		font-size: 0.9em;
+	}
+	p{
+		font-size: 1em;
+	}
+}
+@media screen and (min-width: 800px) {
+	#button{ 
+		margin-top: 15vh; 
+	}
+	label{
+		font-size: 1.5em;
+	}
+	h2, h3, h4, a{
+		margin: 0;
+		font-size: 2em;
+	}
+	p{
+		font-size: 1.5em;
+	}
+}
